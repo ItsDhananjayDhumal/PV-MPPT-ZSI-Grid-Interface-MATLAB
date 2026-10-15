@@ -107,6 +107,7 @@ Summary comparison of active power generation and grid delivery across all 3 sce
 | [`run_case2_irradiance_step.m`](run_case2_irradiance_step.m) | Executes Case 2 (Dynamic steps), evaluates event triggers, and plots results. |
 | [`run_case3_partial_shading.m`](run_case3_partial_shading.m) | Executes Case 3 (PSC), compares against conventional P&O benchmark. |
 | [`run_all_cases.m`](run_all_cases.m) | Master script that runs all cases and prints the consolidated metrics table. |
-| [`build_simulink_model.m`](build_simulink_model.m) | Programmatically constructs and wires the complete Simulink model `pv_zsi_grid_mppt.slx`. |
+| [`build_simulink_model.m`](build_simulink_model.m) | Programmatically constructs and wires the complete Simscape Electrical physical circuit model `pv_zsi_grid_mppt.slx`. |
+| [`run_simulink_simulation.m`](run_simulink_simulation.m) | Builds, opens, and simulates the Simscape Electrical circuit, launching all 4 real-time scopes. |
 | [`verify_and_generate_plots.py`](verify_and_generate_plots.py) | Standalone verification and plot generation engine. |
 | [`README.md`](README.md) | Full technical and operational documentation. |

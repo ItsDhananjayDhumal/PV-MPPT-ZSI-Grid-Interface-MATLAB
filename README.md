@@ -99,11 +99,24 @@ The **Current Sweep MPPT** operates dynamically:
    - `run_case1_stc`
    - `run_case2_irradiance_step`
    - `run_case3_partial_shading`
-4. Programmatically build / open the Simulink model:
+4. Build, open, and simulate the Simscape Electrical circuit model:
+   ```matlab
+   run_simulink_simulation
+   ```
+   Or to build and open the model interactively:
    ```matlab
    build_simulink_model
    open_system('pv_zsi_grid_mppt')
    ```
+   This opens the complete Simscape Electrical physical schematic featuring:
+   - Simscape `PV Array` (10 kW: 7 Series x 5 Parallel)
+   - Simscape `Diode` (Input DC blocking diode)
+   - Symmetrical Z-Source X-network: `L1, L2` (3.5 mH) and `C1, C2` (850 uF)
+   - Simscape `Universal Bridge` (3-phase IGBT/Diode inverter)
+   - Simscape `Three-Phase Series RLC Branch` (AC output filter)
+   - Simscape `Three-Phase V-I Measurement` and `Three-Phase Source` (440V, 50Hz Grid)
+   - Simscape `powergui` discrete solver (50 us)
+   - 4 Live Diagnostic Scopes (`Scope_PV_Array`, `Scope_ZSI_Dynamics`, `Scope_MPPT_Dynamics`, `Scope_Grid_440V`)
 
 ### Standalone Python Engine:
 To re-run the high-speed verification engine and re-generate high-resolution PNG figures:
